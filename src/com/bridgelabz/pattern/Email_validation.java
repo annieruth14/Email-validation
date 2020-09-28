@@ -8,7 +8,7 @@ public class Email_validation {
 	
 	public boolean checkPattern(String name) {
 		   boolean result = false;
-		   String pattern = "^(.[A-Za-z]{2})?$";
+		   String pattern = "^[A-Za-z0-9]+([_+-.]?[A-Za-z0-9]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}(.[A-Za-z]{2})?$";
 		   
 		   // Create a Pattern object
 		   Pattern r = Pattern.compile(pattern);
@@ -26,8 +26,8 @@ public class Email_validation {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 	       Email_validation obj = new Email_validation();
-	       System.out.println("Enter second optional part of an email");
-	       String value = sc.nextLine();
+	       
+	       String value = "abc";
 	       Boolean ans = obj.checkPattern(value);
 	       System.out.println(ans);
 	}
